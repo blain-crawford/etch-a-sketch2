@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/styles.css">
-  <title>Document</title>
-</head>
-<body>
-  <script src="scripts/scripts.js"></script>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>etch-a-sketch</title>
+  </head>
+  <body>
+    <div class="main-content">
+      <div id="adjusters">
+        <div id="black" class="selector">Black</div>
+        <div id="rainbow" class="selector">Rainbow</div>
+        <div id="clear" class="selector">Clear</div>
+        <div id="eraser" class="selector">Eraser</div>
+        <div id="color-choice" class="selector">Pick a color-choice</div>
+      </div>
+      <div id="etch-outline">
+        <header class="title">
+          <img class="logo" src="images/etch.png" />
+        </header>
+        <div id="screen">
+
+        </div>
+        <div id="controls">
+          <div class="wheel-left">
+            <div class="inner-wheel"></div>
+          </div>
+          <div class="grid-controls">
+            <input id="grid-maker" class="grid-maker" type="range" list="tickmarks" min="0" max="100" value="0" step="1" />
+           
+            <div class="grid-label">
+              <p id="label">0</p>
+            </div>
+          </div>
+          <div class="wheel-right">
+            <div class="inner-wheel"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/scripts.js"></script>
+  </body>
 </html>
