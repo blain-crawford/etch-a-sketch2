@@ -15,7 +15,7 @@
         <div id="clear" class="selector">Clear</div>
         <div id="eraser" class="selector">Eraser</div>
         <div id="color-choice" class="selector">
-          Pick a color-choice  
+          <label>Pick a color-choice</label>
           <input id="color-selector" type="color" />
         </div>
       </div>
@@ -23,16 +23,22 @@
         <header class="title">
           <img class="logo" src="images/etch.png" />
         </header>
-        <div id="screen">
-
-        </div>
+        <div id="screen"></div>
         <div id="controls">
           <div class="wheel-left">
             <div class="inner-wheel"></div>
           </div>
           <div class="grid-controls">
-            <input id="grid-maker" class="grid-maker" type="range" list="tickmarks" min="0" max="100" value="0" step="1" />
-           
+            <input
+              id="grid-maker"
+              class="grid-maker"
+              type="range"
+              list="tickmarks"
+              min="0"
+              max="100"
+              value="0"
+              step="1"
+            />
             <div class="grid-label">
               <p id="label">0</p>
             </div>
