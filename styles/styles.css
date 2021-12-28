@@ -1,9 +1,5 @@
+/* resets and imports */
 @import url(./reset.css);
-
-@font-face {
-  font-family: etch;
-  src: url();
-}
 
 html,
 body {
@@ -22,6 +18,8 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+/* Top Area with Selector buttons */
 
 #adjusters {
   box-shadow: 9px 20px 13px 0px rgba(0, 0, 0, 0.5);
@@ -60,6 +58,8 @@ body {
   width: 100%;
   height: 20px;
 }
+
+/* actual Etch-A-Sketch */
 
 #etch-outline {
   background-color: red;
