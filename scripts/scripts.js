@@ -7,6 +7,7 @@ const blackButton = document.getElementById('black');
 const clearButton = document.getElementById('clear');
 const eraserButton = document.getElementById('eraser');
 const rainbowButton = document.getElementById('rainbow');
+const colorSelector = document.getElementById('color-selector');
 
 
 //gets rid of grid
@@ -42,7 +43,7 @@ const gridMaker = function () {
 slider.addEventListener('input', gridMaker);
 
 //color divs black in etch-a-sketch
-const black = function () {
+const black = function() {
   this.style.cssText = 'background-color: black;';
 };
 
@@ -102,7 +103,7 @@ clearButton.addEventListener('click', valueZero);
 clearButton.addEventListener('click', deleteGrid);
 
 
-//remove color from divs in etch-a-sketch
+//erase or remove color from divs in etch-a-sketch
 let erase = function() {
   this.style.cssText = '';
   this.style.cssText = 'background-color: transparent;'
@@ -121,6 +122,24 @@ let addEraser = function() {
 
 //add eraserButton functionality
 eraserButton.addEventListener('click', addEraser);
+
+//color divs a chosen color in etch-a-sketch
+let colorSelection = function() {
+  color = this.value;
+  console.log(color);
+  this.style.cssText = `background-color: ${color}`;
+};
+
+// set up color selector functionality
+let addSelectedColor = function() {
+  clearEventListeners();
+
+  document.querySelectorAll('.block').forEach(block => {
+    block.addEventListener('mouseover', colorSelection);
+  });
+};
+//add colorSelector functionality
+colorSelector.addEventListener('input', addSelectedColor);
 
 
 
