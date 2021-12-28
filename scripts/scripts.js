@@ -8,6 +8,9 @@ const clearButton = document.getElementById('clear');
 const eraserButton = document.getElementById('eraser');
 const rainbowButton = document.getElementById('rainbow');
 const colorSelector = document.getElementById('color-selector');
+const myHtml = document.querySelector('html');
+let mouseClicked = false;
+
 
 
 //gets rid of grid
@@ -44,7 +47,9 @@ slider.addEventListener('input', gridMaker);
 
 //color divs black in etch-a-sketch
 const black = function() {
+  if(mouseClicked === true){
   this.style.cssText = 'background-color: black;';
+  }
 };
 
 //clearing event listeners to add new one
@@ -57,12 +62,14 @@ let clearEventListeners = function() {
     block.removeEventListener('mouseover', rainbow);
   })
 
-  // document.querySelectorAll('.block').forEach(block => {
-  //   block.removeEventListener('mouseover', chosenColor);
-  // })
+  document.querySelectorAll('.block').forEach(block => {
+    block.removeEventListener('mouseover', colorSelection);
+  })
 
   document.querySelectorAll('.block').forEach(block => {
-    block.removeEventListener('mouseover', erase);
+    if(mouseClicked === true){
+      block.removeEventListener('mouseover', erase);
+    }
   });
 };
 
@@ -72,6 +79,7 @@ let addBlack = function() {
   document.querySelectorAll('.block').forEach(block => {
     block.addEventListener('mouseover', black);
   })
+
 };
 
 
@@ -82,13 +90,18 @@ blackButton.addEventListener('click', addBlack);
 
 //color divs rainbow in etch-a-scketch
 let rainbow = function() {
-  this.style.cssText = '';
-  this.style.cssText = `background-color: rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255});`;
+   
+  if(mouseClicked === true){
+    // this.style.cssText = '';
+    this.style.cssText = `background-color: rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255});`;
+  }
+  
 };
 
 //set up rainbow button functionality
 let addRainbow = function() {
   clearEventListeners();
+
   document.querySelectorAll('.block').forEach(block => {
     block.addEventListener('mouseover', rainbow);
   });
@@ -105,8 +118,11 @@ clearButton.addEventListener('click', deleteGrid);
 
 //erase or remove color from divs in etch-a-sketch
 let erase = function() {
-  this.style.cssText = '';
-  this.style.cssText = 'background-color: transparent;'
+  
+  if(mouseClicked === true){
+    // this.style.cssText = '';
+    this.style.cssText = 'background-color: transparent;'
+  }
 };
 
 
@@ -125,21 +141,34 @@ eraserButton.addEventListener('click', addEraser);
 
 //color divs a chosen color in etch-a-sketch
 let colorSelection = function() {
-  color = this.value;
-  console.log(color);
-  this.style.cssText = `background-color: ${color}`;
+  
+  if(mouseClicked === true){
+    let chosenColor = colorSelector.value
+    this.style.cssText = `background-color: ${chosenColor}`;
+  }
 };
 
 // set up color selector functionality
-let addSelectedColor = function() {
+let addChosenColor = function() {
   clearEventListeners();
 
   document.querySelectorAll('.block').forEach(block => {
     block.addEventListener('mouseover', colorSelection);
-  });
-};
+  })
+}
+
 //add colorSelector functionality
-colorSelector.addEventListener('input', addSelectedColor);
+colorSelector.addEventListener('input', addChosenColor);
 
 
+//making functionality for mandatory mouse click for drawing
+const checkDown = function(e){
+  mouseClicked = true;
+}
 
+const checkUp = function() {
+  mouseClicked = false;
+} 
+
+myHtml.addEventListener('mousedown', checkDown);
+myHtml.addEventListener('mouseup', checkUp)
