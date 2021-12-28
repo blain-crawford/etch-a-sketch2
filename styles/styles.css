@@ -48,6 +48,10 @@ body {
   -webkit-text-stroke: 1px black;
 }
 
+.selector:hover {
+  cursor: pointer;
+}
+
 #color-choice {
   display: flex;
   flex-direction: column;
