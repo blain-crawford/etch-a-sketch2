@@ -46,10 +46,13 @@ body {
   background-color: lightgray;
   font-size: 30px;
   -webkit-text-stroke: 1px black;
+  transition: .2s ease-in-out;
 }
 
 .selector:hover {
   cursor: pointer;
+  font-size: 31px;
+  box-shadow: 5px 5px 13px 5px rgba(0, 0, 0, 0.5);
 }
 
 #color-choice {
