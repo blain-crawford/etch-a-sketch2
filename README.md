@@ -3,7 +3,11 @@
 ## Creator
   - Blain Crawford
 
-Created as a way to simulate the fun of art creation with the toy Etch-A-Sketch re-imagined as a digital UI in 2021.  
+Created as a way to simulate the fun of art creation with the toy Etch-A-Sketch re-imagined as a digital UI in 2021. 
+
+## Deployed at:
+https://blain-crawford.github.io/etch-a-sketch2/
+<br><br><br>
 
 ## Technologies Used
   -  JavaScript
@@ -27,7 +31,6 @@ Created as a way to simulate the fun of art creation with the toy Etch-A-Sketch 
 
 ## Just simply draw until your heart is content!
 
-<img src="./images/park-hangs.png">
 
 
 
